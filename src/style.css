@@ -19,7 +19,6 @@ main {
 }
 
 section.main {
-    /*border: 1px solid black;*/
     width: 100%;
     max-width: 860px;
 }
@@ -38,7 +37,6 @@ div.flex {
 
 a.exerbox {
     display: block;
-    /*border: 1px solid black;*/
     margin: 2px;
     border-radius: 6px;
 
