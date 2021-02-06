@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание</title>
+		<link rel="stylesheet" href="src/style.css">
+		<link rel="stylesheet" href="src/dialog.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Задания для подготовки к ЕГЭ по русскому языку">
+	</head>
+	
+	<body>
+		<header>
+			<a href="/"><h1>task</h1></a>
+			<button onclick="openHelp()">Помощь</button>
+		</header>
+		
+		<main>
+			<section id="taskbox">
+				<p id="tasktext"></p>
+				<p id="taskhelp"></p>
+				<div id="taskbuttons">
+					<!-- Buttons will appear here -->
+				</div>
+				<div id="helpbuttons">
+					<button class="taskbtn dontknowbtn" onclick="idkAnswer()">Не знаю</button>
+					<button class="taskbtn whybtn" onclick="whyAnswer()">?</button>
+				</div>
+				<p id="tasksource"></p>
+			</section>
+		</main>
+
+		<div id="dialog-bg">
+			<div id="help-dialog">
+				<div id="dialog-flex">
+					<h2>Помощь</h2>
+					<button id="dialog-closebtn"><img src="src/img/closebtn.svg"></button>
+				</div>
+				<p id="helpdesc"></p>
+				<hr/>
+				<p>Нашли ошибку? <a href="https://github.com/rus-ege/task/issues">GitHub Issues</a></p>
+				<!--<hr/>
+				<h3>Настройки</h3>
+				<label><input type="checkbox"><p><b>Отключить outline</b><br/>Отключить обводку, появляющуюся при взаимодействии с интерактивными элементами.</p></label>
+				<label><input type="checkbox"><p><b>Тёмная тема</b></p></label>-->
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="src/main.js"></script>
+		<script src="src/dialog.js"></script>
+	</body>
+</html>

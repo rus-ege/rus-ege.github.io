@@ -1,0 +1,102 @@
+/* HELP DIALOG */
+#dialog-bg {
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	background-color: rgba(0,0,0,0.5);
+	backdrop-filter: blur(2px);
+	justify-content: center; align-items: center;
+	display: none;
+}
+#help-dialog {
+	min-width: min(80%, 640px);
+	max-width: 860px;
+	background-color: white;
+	
+	border: 1px solid var(--theme-color-gray);
+	border-radius: 6px;
+
+	margin: 4px;
+
+	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .05);
+	padding-top: 0px;
+	padding-bottom: 16px;
+}
+/* настройка дочерних элементов */
+#help-dialog > h2,
+#help-dialog > h3,
+#help-dialog > p,
+#help-dialog > label,
+#help-dialog > hr,
+#help-dialog > #dialog-flex {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+#help-dialog h2 {
+	margin-top: 32px;
+	margin-bottom: 8px;
+}
+#help-dialog h3 {
+	margin-top: 24px;
+	margin-bottom: 8px;
+}
+#help-dialog > p {
+	margin-top: 4px;
+	margin-bottom: 6px;
+}
+#help-dialog > hr {
+	border: none;
+	border-top: 1px solid var(--theme-color-gray);
+	margin-top: 16px;
+}
+#help-dialog > label {
+	--margin: 4px;
+	display: flex;
+	align-items: center;
+	margin-top: 0px;
+	margin-bottom: var(--margin);
+
+	--ps: 8px;
+	padding-top: var(--ps);
+	padding-bottom: var(--ps);
+	border-radius: 6px;
+}
+#help-dialog > label:hover {
+	background-color: var(--theme-color-select);
+}
+#help-dialog > label:active {
+	transform: var(--btn-transform);
+}
+#help-dialog label input {
+	margin-left: 8px;
+}
+#help-dialog label p {
+	margin-left: 8px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#help-dialog button {
+	border: none;
+	background: none;
+}
+#dialog-closebtn img {
+	width: 18px;
+	opacity: 0.4;
+}
+#dialog-closebtn img:hover {
+	opacity: 1;
+}
+#dialog-closebtn:active {
+	transform: var(--btn-transform);
+}
+#dialog-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#help-dialog a {
+	text-decoration: none;
+}
+#help-dialog a:hover {
+	text-decoration: underline;
+}

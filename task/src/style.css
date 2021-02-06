@@ -1,0 +1,311 @@
+:root {
+	--primary-font: 'Inter', sans-serif;
+	--btn-transform: translateY(1px) scale(0.995);
+	
+	/* color theme */
+	--theme-color: #FFC000;
+	--theme-color-hover: #BF9000;
+	--theme-color-active: #7F6000;
+	
+	/* correct */
+	--theme-color-correct: #70AD47;
+	--theme-color-correct-hover: #649B3F;
+	--theme-color-correct-active: #558335;
+	
+	/* wrong */
+	--theme-color-wrong: #FF3333;
+	--theme-color-wrong-hover: #FF1D1D;
+	--theme-color-wrong-active: #FA0000;
+
+	--theme-color-idle: #FF3333;
+	--theme-color-idle-hover: #FF1D1D;
+	--theme-color-idle-active: #FA0000;
+	
+	/* for select */
+	--theme-color-correct-select: var(--theme-color-correct);
+	--theme-color-wrong-select: var(--theme-color-wrong);
+	--theme-color-select: #E8E8E8;
+	
+	--theme-color-gray: #7F7F7F;
+
+	/* element sizes */
+	--theme-elem-padding-v: 10px;
+	--theme-elem-padding-h: 32px;
+
+	--theme-elem-size-text: 2.2rem;
+	--theme-elem-size-help: 1.1rem;
+	--theme-elem-fsize-button: 1.2rem;
+	--theme-elem-fsize-idk: 1.1rem;
+	--theme-elem-fsize-input: 1rem;
+	--theme-elem-fsize-select: 1rem;
+}
+
+/* {border: 1px solid gray;}*/
+
+body {
+	margin: 0;
+}
+body * {
+	font-family: var(--primary-font);
+	transition-timing-function: ease-in-out;
+}
+
+/* header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 16px 32px 48px 32px;
+}
+header a {
+	color: inherit;
+	text-decoration: none;
+}
+header h1 {
+	font-size: 1.5rem;
+	transition-duration: .05s;
+}
+header h1:hover {
+	transform: translateX(-1px);
+	color: var(--theme-color-gray);
+}
+header h1:before {
+	opacity: 0;
+	transition-duration: .1s;
+}
+header h1:hover::before {
+	opacity: 1;
+	content: '«';
+	position: absolute;
+	transform: translateX(-20px);
+	color: var(--theme-color-gray);
+}
+header h1:active {
+	transform: var(--btn-transform);
+}
+
+header button {
+	border: none;
+	background: none;
+	font-size: 1rem;
+	padding: 4px 12px;
+	font-weight: 600;
+	transition-duration: .1s;
+}
+header button:active {
+	transform: var(--btn-transform);
+}
+
+/* main */
+main {
+	margin: 16px 4px;
+}
+
+/* taskbox */
+#taskbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 128px auto;
+}
+#tasktext {
+	font-size: var(--theme-elem-size-text);
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0;
+	text-align: center;
+}
+#tasktext.small {
+	font-size: calc(var(--theme-elem-size-text) - .5em);
+	max-width: 70%;
+}
+#taskhelp {
+	color: var(--theme-color-gray);
+	font-weight: 600;
+	font-size: var(--theme-elem-size-help);
+	text-align: center;
+}
+
+#taskbuttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+	max-width: 80%;
+}
+
+.taskbtn {
+	font-size: var(--theme-elem-fsize-button);
+	font-weight: bold;
+	color: white;
+	border: none;
+	background-color: var(--theme-color);
+	padding: var(--theme-elem-padding-v) var(--theme-elem-padding-h);
+	border-radius: 6px;
+	margin: 4px;
+	transition-duration: .1s;
+	min-width: 240px;
+}
+.taskbtn:hover {
+	background-color: var(--theme-color-hover);
+}
+.taskbtn:active {
+	background-color: var(--theme-color-active);
+	transform: var(--btn-transform);
+	outline: none;
+}
+
+#taskbuttons input {
+	font-size: var(--theme-elem-fsize-input);
+	border: 2px solid var(--theme-color);
+	border-radius: 6px;
+	font-weight: 600;
+	padding: var(--theme-elem-padding-v);
+	min-width: min(100%, 320px);
+	margin: 4px;
+	transition-duration: .1s;
+}
+#taskbuttons input:hover {
+	border: 2px solid var(--theme-color-hover);
+}
+#taskbuttons input:active {
+	transform: var(--btn-transform);
+	outline: none;
+}
+
+#taskbuttons select,
+#tasktext select {
+	display: inline-block;
+	font-size: var(--theme-elem-fsize-select);
+	padding: var(--theme-elem-padding-v);
+	border: none;
+	background-color: var(--theme-color-select);
+	border-radius: 4px;
+	margin: 4px;
+	padding: 4px 6px;
+	font-weight: 900;
+	transition-duration: .1s;
+}
+#taskbuttons select:active,
+#tasktext select:active {
+	transform: var(--btn-transform);
+	outline: none;
+}
+#tasktext.wrong select:disabled,
+#tasktext.correct select:disabled {
+	color: white;
+}
+#tasktext select:disabled {
+	color: black;
+}
+
+#tasktext select.correct {
+	background-color: var(--theme-color-correct-select);
+}
+#tasktext select.wrong {
+	background-color: var(--theme-color-wrong-select);
+}
+
+#tasksource,
+#tasksource a {
+	color: var(--theme-color-gray);
+	font-weight: 600;
+	font-size: calc(var(--theme-elem-size-help) - 0.15rem);
+	text-align: center;
+	text-decoration: none;
+}
+#tasksource a:hover {
+	text-decoration: underline;
+}
+
+/* кнопки не знаю/почему */
+#helpbuttons {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* кнопка "не знаю" */
+.dontknowbtn {
+	font-size: var(--theme-elem-fsize-idk);
+	background-color: #5B9BD5;
+}
+.dontknowbtn:hover {
+	background-color: #3483CA;
+}
+.dontknowbtn:active {
+	background-color: #2C70AE;
+}
+
+/* кнопка "почему" */
+.whybtn {
+	min-width: 0px;
+	font-size: var(--theme-elem-fsize-idk);
+	border: 2px solid #5B9BD5;
+	background-color: white;
+	color: black;
+}
+.whybtn:hover {
+	border: 2px solid #3483CA;
+	background-color: white;
+	color: black;
+}
+.whybtn:active {
+	border: 2px solid #2C70AE;
+	background-color: white;
+	color: black;
+}
+
+/* кнопки правильных и неправильных ответов */
+.correct {
+	background-color: var(--theme-color-correct);
+}
+.correct:hover {
+	background-color: var(--theme-color-correct-hover);
+}
+.correct:active {
+	background-color: var(--theme-color-correct-active);
+}
+.wrong {
+	background-color: var(--theme-color-wrong);
+}
+.wrong:hover {
+	background-color: var(--theme-color-wrong-hover);
+}
+.wrong:active {
+	background-color: var(--theme-color-wrong-active);
+}
+
+/* no outline */
+#no-outline {
+	outline: none;
+}
+
+
+ie {
+	display: inline-block;
+}
+
+/* MEDIA */
+@media (max-width: 1000px) {
+	#taskbox {
+		margin: 0px auto;
+	}
+	
+	header {
+		margin-bottom: 12px;
+	}
+	
+	header h1 {
+		font-size: 1.3rem;
+	}
+	#tasktext {
+		margin-top: 16px;
+	}
+
+	#tasktext.small {
+		font-size: calc(var(--theme-elem-size-text) - .7em);
+		max-width: 90%;
+	}
+}
