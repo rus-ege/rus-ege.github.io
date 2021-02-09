@@ -53,7 +53,7 @@ urlData = JSON.parse(urlData);
 
 //console.log(urlData);
 
-getData('data/' + urlData.task + '.json');
+getData('/data/task/' + urlData.task + '.json');
 
 /* Генерация задания */
 function generateTask() {
