@@ -99,10 +99,16 @@ function generateTask() {
     
     // Изменяет элементы
     TASK_TEXT.innerHTML = currentTask.text.replace('_', '________')/*.replace('/', '_')*/;
-    TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<op>/gmi, '<option>');
+    /*TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<op>/gmi, '<option>');
     TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<\/op>/gmi, '</option>');
     TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<se>/gmi, '<select>');
-    TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<\/se>/gmi, '</select>');
+    TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/<\/se>/gmi, '</select>');*/
+
+    // Условие задания - замена
+    if (param.replace?.r1) { TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/\[1\]/gmi, param.replace.r1) }
+    if (param.replace?.r2) { TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/\[1\]/gmi, param.replace.r2) }
+    if (param.replace?.r3) { TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/\[1\]/gmi, param.replace.r3) }
+    if (param.replace?.r4) { TASK_TEXT.innerHTML = TASK_TEXT.innerHTML.replace(/\[1\]/gmi, param.replace.r4) }
     
     switch (param.type) {
         case 'input':

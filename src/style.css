@@ -94,5 +94,5 @@ footer div a:hover {
 @media (max-width: 700px) {
     div.flex {
         grid-template-columns: 1fr;
-    }   
+    }
 }
