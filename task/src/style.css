@@ -125,6 +125,7 @@ main {
 	font-weight: 600;
 	font-size: var(--theme-elem-size-help);
 	text-align: center;
+	margin: 8px;
 }
 
 #taskbuttons {
